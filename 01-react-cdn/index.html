@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React CDN</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Hola mundo con React -->
+    <!-- 
+    div id="root"></div>
+    <script>
+      ReactDOM.render(
+        React.createElement("h1", null, "Hola mundo"),
+        document.getElementById("root")
+      );
+    </script> -->
+
+    <!-- ====================================================== -->
+    <!-- Problema sin JSX -->
+    <!-- 
+    <div id="root"></div>
+    <script>
+      ReactDOM.render(
+        React.createElement(
+          "ol",
+          null,
+          React.createElement("li", null, "Uva"),
+          React.createElement("li", null, "Limon"),
+          React.createElement("li", null, "Mando")
+        ),
+        document.getElementById("root")
+      );
+    </script> -->
+
+    <!-- ====================================================== -->
+    <!-- Babel y JSX -->
+    <!-- 
+    <div id="root"></div>
+    <script type="text/babel">
+      ReactDOM.render(
+        <div>
+          <ul>
+            <li>Uva</li>
+            <li>Limon</li>
+            <li>Mando</li>
+          </ul>
+        </div>,
+        document.getElementById("root")
+      );
+    </script> -->
+
+    <!-- ====================================================== -->
+    <!-- Introduccion a los Componentes -->
+    <!-- Class Components (legacy) -->
+    <!--     
+    <div id="root"></div>
+    <script type="text/babel">
+      class Saludo extends React.Component {
+        render() {
+          return (
+            <ul>
+              <li>Uno</li>
+              <li>Dos</li>
+              <li>Tres</li>
+            </ul>
+          );
+        }
+      }
+    ReactDOM.render(<Saludo></Saludo>, document.getElementById("root"));
+    </script> -->
+
+    <!-- ====================================================== -->
+    <!-- Functional Components -->
+    <!-- 
+    <div id="root"></div>
+    <script type="text/babel">
+      const Saludo = () => {
+        return (
+          <ol>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ol>
+        );
+      };
+
+      ReactDOM.render(<Saludo />, document.getElementById("root"));
+    </script> -->
+
+    <!-- ====================================================== -->
+    <!-- Interpolar Variables -->
+    <!-- 
+    <div id="root"></div>
+    <script type="text/babel">
+      const Interpolar = () => {
+        const nombre = prompt("Cual es tu Nombre?");
+        return (
+          <div>
+            <h1>Hola {nombre}</h1>
+            <h1>El anio es: {new Date().getFullYear()}</h1>
+            <hr />
+          </div>
+        );
+      };
+      ReactDOM.render(<Interpolar />, document.getElementById("root"));
+    </script> -->
+
+    <!-- ====================================================== -->
+    <!-- Introduccion a los Estados -->
+    <!-- 
+    <div id="root"></div>
+    <script type="text/babel">
+      const Interpolar = () => {
+        const [numero, setNumero] = React.useState(0);
+
+        // setInterval(() => {
+        //   setNumero(numero + 1);
+        //   console.log(numero);
+        // }, 1500);
+
+        return (
+          <div>
+            <h1>El anio es: {numero}</h1>
+            <hr />
+          </div>
+        );
+      };
+      ReactDOM.render(<Interpolar />, document.getElementById("root"));
+      
+    </script> -->
+
+    <div id="root"></div>
+
+    <script type="text/babel" src="./components/Contador.js"></script>
+    <script type="text/babel" src="./index.js"></script>
+  </body>
+</html>
